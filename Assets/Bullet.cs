@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    // 当たり判定用関数
+    private void OnTriggerEnter(Collider other)
+    {
+        // もし当たったオブジェクトのタグがEnemyだったら
+        if(other.gameObject.tag == "Enemy")
+        {
+            // 当たったオブジェクトのEnemyスクリプトを呼び出してDamage関数を実行させる
+            other.GetComponent<Enemy>().Damage();
+            Destroy(this.gameObject);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {

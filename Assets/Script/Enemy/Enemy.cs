@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     // Enemy‚Ì‘Ì—Í—p•Ï”
-    private int enemyHp;
+    public int enemyHp;
 
     public void Damage()
     {
